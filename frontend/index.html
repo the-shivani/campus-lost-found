@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Campus Lost & Found System — Report, track, and recover lost items on campus.">
+  <title>Campus Lost & Found System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ─── Header ─── -->
+  <header class="header" id="app-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">🔍</span>
+        <h1>Campus Lost &amp; Found</h1>
+      </div>
+      <p class="tagline">Report · Track · Recover</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ─── Dashboard Stats ─── -->
+    <section class="stats-grid" id="stats-section">
+      <div class="stat-card stat-total" id="stat-total">
+        <span class="stat-icon">📦</span>
+        <div class="stat-info">
+          <span class="stat-number" id="total-count">0</span>
+          <span class="stat-label">Total Items</span>
+        </div>
+      </div>
+      <div class="stat-card stat-lost" id="stat-lost">
+        <span class="stat-icon">🔴</span>
+        <div class="stat-info">
+          <span class="stat-number" id="lost-count">0</span>
+          <span class="stat-label">Lost</span>
+        </div>
+      </div>
+      <div class="stat-card stat-found" id="stat-found">
+        <span class="stat-icon">🟢</span>
+        <div class="stat-info">
+          <span class="stat-number" id="found-count">0</span>
+          <span class="stat-label">Found</span>
+        </div>
+      </div>
+      <div class="stat-card stat-returned" id="stat-returned">
+        <span class="stat-icon">✅</span>
+        <div class="stat-info">
+          <span class="stat-number" id="returned-count">0</span>
+          <span class="stat-label">Returned</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Add Item Form ─── -->
+    <section class="form-section" id="form-section">
+      <h2 class="section-title">Report an Item</h2>
+      <form id="item-form" autocomplete="off">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="item-name">Item Name</label>
+            <input type="text" id="item-name" placeholder="e.g. Black Wallet" required>
+          </div>
+          <div class="form-group">
+            <label for="item-location">Location</label>
+            <input type="text" id="item-location" placeholder="e.g. Library 2nd Floor" required>
+          </div>
+          <div class="form-group">
+            <label for="item-contact">Contact</label>
+            <input type="text" id="item-contact" placeholder="e.g. 9876543210" required>
+          </div>
+          <div class="form-group">
+            <label for="item-date">Date</label>
+            <input type="date" id="item-date" required>
+          </div>
+          <div class="form-group">
+            <label for="item-type">Type</label>
+            <select id="item-type" required>
+              <option value="" disabled selected>Select type</option>
+              <option value="lost">Lost</option>
+              <option value="found">Found</option>
+            </select>
+          </div>
+          <div class="form-group form-submit-group">
+            <button type="submit" id="add-btn" class="btn btn-primary">
+              <span class="btn-icon">＋</span> Add Item
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- ─── Search & Filter ─── -->
+    <section class="controls-section" id="controls-section">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="Search by name, location…">
+      </div>
+      <div class="filter-tabs" id="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="lost">Lost</button>
+        <button class="filter-btn" data-filter="found">Found</button>
+        <button class="filter-btn" data-filter="returned">Returned</button>
+      </div>
+    </section>
+
+    <!-- ─── Items Grid ─── -->
+    <section class="items-section" id="items-section">
+      <div class="items-grid" id="items-grid">
+        <!-- Cards injected by JS -->
+      </div>
+      <div class="empty-state" id="empty-state" style="display:none;">
+        <span class="empty-icon">📭</span>
+        <p>No items to display</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── Toast ─── -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <footer class="footer" id="app-footer">
+    <p>&copy; 2026 Campus Lost &amp; Found System</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
