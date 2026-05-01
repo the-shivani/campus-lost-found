@@ -2,8 +2,7 @@
    Campus Lost & Found — Application Logic
    ═══════════════════════════════════════════════════════════ */
 
-const API = 'http://localhost:3000';
-
+const API = 'https://campus-backend-q9qw.onrender.com';
 // ── DOM References ──────────────────────────────────────
 const form        = document.getElementById('item-form');
 const nameInput   = document.getElementById('item-name');
