@@ -5,7 +5,7 @@ const Item = require('./models/Item');
 
 const app = express();
 
-const MONGO_URI = 'mongodb://127.0.0.1:27017/lostfound';
+const MONGO_URI = process.env.MONGO_URI;
 
 // Middleware
 app.use(cors());
